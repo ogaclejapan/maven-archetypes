@@ -1,2 +1,2 @@
-maven-archetypes
-================
+original maven-archetypes
+==========================
