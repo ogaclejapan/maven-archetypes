@@ -7,9 +7,6 @@
 	<version>${version}</version>
 	<packaging>jar</packaging>
 
-	<name>ogaclejapan-archtype-quickstart</name>
-	<url>http://maven.apache.org</url>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.slf4j.version>1.6.6</org.slf4j.version>
@@ -18,13 +15,6 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>com.ogaclejapan.Bootstrap</mainClass>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
