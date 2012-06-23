@@ -8,6 +8,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>ogaclejapan-archetype-quickstart</name>
+  <url>http://ogaclejapan.github.com/maven-archetypes/</url>
 
   <build>
     <extensions>
@@ -28,5 +29,4 @@
     </pluginManagement>
   </build>
 
-  <url>http://maven.apache.org</url>
 </project>
