@@ -1,0 +1,10 @@
+<html>
+<head>
+	<title>Bootstrap</title>
+</head>
+<body>
+<h1>
+	${message}  
+</h1>
+</body>
+</html>
