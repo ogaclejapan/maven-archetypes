@@ -11,7 +11,7 @@ public class Bootstrap {
      * @param args
      */
     public static void main(String[] args) {
-	log.info("Hello world.");
+    	log.info("Hello world.");
     }
 
 }
