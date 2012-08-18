@@ -2,6 +2,7 @@
 <archetype-catalog  xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-catalog/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-catalog/1.0.0 http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd">
   <archetypes>
+        <!-- Standalone quickstart -->
   	<archetype>
   		<groupId>com.ogaclejapan</groupId>
   		<artifactId>ogaclejapan-archetype-quickstart</artifactId>
@@ -11,11 +12,27 @@
   	</archetype>
   	<archetype>
   		<groupId>com.ogaclejapan</groupId>
+  		<artifactId>ogaclejapan-archetype-quickstart</artifactId>
+  		<version>1.1</version>
+  		<description>ogaclejapan quickstart Java project.</description>
+  		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
+  	</archetype>
+        <!-- Springmvc with Freemarker -->
+  	<archetype>
+  		<groupId>com.ogaclejapan</groupId>
   		<artifactId>ogaclejapan-archetype-springmvc-ftl</artifactId>
   		<version>1.0</version>
   		<description>ogaclejapan SpringMVC with Freemarker Java project.</description>
   		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
   	</archetype>
+  	<archetype>
+  		<groupId>com.ogaclejapan</groupId>
+  		<artifactId>ogaclejapan-archetype-springmvc-ftl</artifactId>
+  		<version>1.1</version>
+  		<description>ogaclejapan SpringMVC with Freemarker Java project.</description>
+  		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
+  	</archetype>
+        <!-- Springmvc with JSP -->
   	<archetype>
   		<groupId>com.ogaclejapan</groupId>
   		<artifactId>ogaclejapan-archetype-springmvc-jsp</artifactId>
@@ -25,8 +42,23 @@
   	</archetype>
   	<archetype>
   		<groupId>com.ogaclejapan</groupId>
+  		<artifactId>ogaclejapan-archetype-springmvc-jsp</artifactId>
+  		<version>1.1</version>
+  		<description>ogaclejapan SpringMVC with JSP Java project.</description>
+  		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
+  	</archetype>
+        <!-- Springmvc with Thymeleaf -->
+  	<archetype>
+  		<groupId>com.ogaclejapan</groupId>
   		<artifactId>ogaclejapan-archetype-springmvc-thymeleaf</artifactId>
   		<version>1.0</version>
+  		<description>ogaclejapan SpringMVC with Thymeleaf Java project.</description>
+  		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
+  	</archetype>
+  	<archetype>
+  		<groupId>com.ogaclejapan</groupId>
+  		<artifactId>ogaclejapan-archetype-springmvc-thymeleaf</artifactId>
+  		<version>1.1</version>
   		<description>ogaclejapan SpringMVC with Thymeleaf Java project.</description>
   		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
   	</archetype>
