@@ -85,7 +85,7 @@
 				<configuration>
 					<useProjectReferences>false</useProjectReferences>
 					<downloadSources>true</downloadSources>
-					<downloadJavadocs>false</downloadJavadocs>
+					<downloadJavadocs>true</downloadJavadocs>
 					<wtpversion>2.0</wtpversion>
 				</configuration>
 			</plugin>
