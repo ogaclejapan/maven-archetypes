@@ -72,12 +72,6 @@
 			<version>2.3.19</version>
 		</dependency>
 		
-		<!-- <dependency> <groupId>javax.servlet.jsp</groupId> <artifactId>jsp-api</artifactId> 
-			<version>2.1</version> <scope>provided</scope> </dependency> <dependency> 
-			<groupId>javax.servlet.jsp.jstl</groupId> <artifactId>jstl-api</artifactId> 
-			<version>1.2</version> </dependency> <dependency> <groupId>org.glassfish.web</groupId> 
-			<artifactId>jstl-impl</artifactId> <version>1.2</version> </dependency> -->
-
 		<!-- JSR 303 with Hibernate Validator -->
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -92,9 +86,9 @@
 
 		<!-- Jackson JSON Mapper -->
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.0</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.0.0</version>
 		</dependency>
 
 		<!-- File Upload -->
@@ -201,45 +195,15 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>aspectj-maven-plugin</artifactId>
-				<version>1.3.1</version>
-				<dependencies>
-					<!-- Note: Maven 2.0.9 or > required or these are ignored (MNG-2972) -->
-					<dependency>
-						<groupId>org.aspectj</groupId>
-						<artifactId>aspectjrt</artifactId>
-						<version>${org.aspectj-version}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.aspectj</groupId>
-						<artifactId>aspectjtools</artifactId>
-						<version>${org.aspectj-version}</version>
-					</dependency>
-				</dependencies>
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-							<goal>test-compile</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<outxml>true</outxml>
-					<aspectLibraries>
-						<aspectLibrary>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-aspects</artifactId>
-						</aspectLibrary>
-					</aspectLibraries>
-					<source>${java-version}</source>
-					<target>${java-version}</target>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
+				<configuration>
+					<!-- Hot Deploy Interval : 1sec -->
+					<scanIntervalSeconds>1</scanIntervalSeconds>											
+					<webAppConfig>
+						<contextPath>/</contextPath>
+					</webAppConfig>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -248,7 +212,7 @@
 				<configuration>
 					<useProjectReferences>false</useProjectReferences>
 					<downloadSources>true</downloadSources>
-					<downloadJavadocs>false</downloadJavadocs>
+					<downloadJavadocs>true</downloadJavadocs>
 					<wtpversion>2.0</wtpversion>
 				</configuration>
 			</plugin>
