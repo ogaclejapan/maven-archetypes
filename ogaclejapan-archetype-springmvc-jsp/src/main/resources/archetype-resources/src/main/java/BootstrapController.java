@@ -16,10 +16,10 @@ public class BootstrapController {
 
     @RequestMapping(value = "/bootstrap", method = RequestMethod.GET)
     public String bootstrap(Locale locale, Model model) {
-	String message = "Hello world!";
-	log.info(message);
-	model.addAttribute("message", message);
-	return "bootstrap";
+		String message = "Hello world!";
+		log.info(message);
+		model.addAttribute("message", message);
+		return "bootstrap";
     }
 
 }
