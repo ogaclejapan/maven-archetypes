@@ -25,6 +25,14 @@
   		<description>ogaclejapan quickstart on spring Java project.</description>
   		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
   	</archetype>
+        <!-- Spring MVC on Jetty -->
+  	<archetype>
+  		<groupId>com.ogaclejapan</groupId>
+  		<artifactId>ogaclejapan-archetype-spring-mvc</artifactId>
+  		<version>1.0</version>
+  		<description>ogaclejapan spring mvc on jetty Java project.</description>
+  		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
+  	</archetype>
         <!-- Springmvc with Freemarker -->
   	<archetype>
   		<groupId>com.ogaclejapan</groupId>
