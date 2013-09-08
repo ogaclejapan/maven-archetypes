@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>${groupId}</groupId>
+	<artifactId>${artifactId}</artifactId>
+	<version>${version}</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<java.sdk>1.6</java.sdk>
+		<java.encoding>UTF-8</java.encoding>
+		<java.main>com.ogaclejapan.Bootstrap</java.main>
+		<org.slf4j.ver>1.7.5</org.slf4j.ver>
+		<ch.qos.logback.ver>1.0.11</ch.qos.logback.ver>
+		<junit.ver>4.10</junit.ver>
+		<org.mockito.ver>1.9.5</org.mockito.ver>
+	</properties>
+
+	<dependencies>
+			
+		<!-- Logging Libs -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j.ver}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j.ver}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+			<version>${org.slf4j.ver}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${ch.qos.logback.ver}</version>
+		</dependency>
+		
+		<!-- Test Libs -->		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.ver}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${org.mockito.ver}</version>
+			<scope>test</scope>
+		</dependency>		
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java.sdk}</source>
+					<target>${java.sdk}</target>
+					<encoding>${java.encoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<finalName>${project.artifactId}-${project.version}-with-dependencies</finalName>
+					<appendAssemblyId>false</appendAssemblyId>				
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>${java.main}</mainClass>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix></classpathPrefix>
+						</manifest>
+					</archive>					
+				</configuration>
+				<executions>
+					<execution>
+						<id>with-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+						
+			<!-- mvn exec:java -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<configuration>
+					<mainClass>${java.main}</mainClass>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+		
+</project>
