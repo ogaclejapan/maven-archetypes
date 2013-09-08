@@ -1,0 +1,61 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<contextName>${artifactId}</contextName>
+
+	<!-- override property: java -D{name}={value} -->
+	<property name="LOG_HOME" value="./logs" />
+	<property name="LOG_LEVEL" value="INFO" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="APP_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${symbol_dollar}{LOG_HOME}/${symbol_dollar}{CONTEXT_NAME}/app.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>app.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="ERROR_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${symbol_dollar}{LOG_HOME}/${symbol_dollar}{CONTEXT_NAME}/error.log</file>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>		
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>error.%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} [%F:%L] - %msg%n</pattern>
+		</encoder>
+	</appender>	
+	
+	<appender name="ASYNC_APP_LOG" class="ch.qos.logback.classic.AsyncAppender">
+		<appender-ref ref="APP_LOG" />
+		<includeCallerData>true</includeCallerData>
+	</appender>
+	
+	<appender name="ASYNC_ERROR_LOG" class="ch.qos.logback.classic.AsyncAppender">
+		<appender-ref ref="ERROR_LOG" />
+		<includeCallerData>true</includeCallerData>
+	</appender>
+	
+	<logger name="${package}" level="DEBUG" />
+	
+	<root level="${symbol_dollar}{LOG_LEVEL}">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="ASYNC_APP_LOG" />
+		<appender-ref ref="ASYNC_ERROR_LOG" />
+	</root>
+	
+</configuration>
