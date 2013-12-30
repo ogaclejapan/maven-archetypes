@@ -1,15 +1,12 @@
 Original Maven Archetypes
 ==========================
 
-
-
-
 Usage
 ----------
 
 ### for Terminal
 
-	mvn archetype:generate -Darchetyp://ogaclejapan.github.com/maven-archetypes/archetype-catalog.xml
+	mvn archetype:generate -DarchetypeCatalog=http://ogaclejapan.github.com/maven-archetypes/archetype-catalog.xml
 
 ### for Eclipse
 
