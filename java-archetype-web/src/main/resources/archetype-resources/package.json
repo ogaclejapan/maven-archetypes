@@ -1,0 +1,22 @@
+{
+  "name": "java-archetype-web",
+  "version": "1.0.0",
+  "description": "java-archetype-web",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ogaclejapan/java-archetype-web.git"
+  },
+  "author": "ogaclejapan",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-cssmin": "~0.6.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.7"
+  }
+}

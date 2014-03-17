@@ -1,0 +1,9 @@
+{
+	"debug": true,
+	
+	/* //your-domain (e.g. //ogaclejapan.com) */
+	"appPath": "",
+	
+	/* //your-assets-domain (e.g. //cdn.ogaclejapan.com) */
+	"assetPath": "" 
+}

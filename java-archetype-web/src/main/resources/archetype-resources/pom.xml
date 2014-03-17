@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>${groupId}</groupId>
+  <artifactId>${artifactId}</artifactId>
+  <version>${version}</version>
+
+  <name>java-archetype-web</name>
+  <packaging>war</packaging>
+
+  <properties>
+
+    <!-- Project -->
+    <java.encoding>UTF-8</java.encoding>
+    <project.build.sourceEncoding>${java.encoding}</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>${java.encoding}</project.reporting.outputEncoding>
+
+    <!-- Java -->
+    <java-servlet.version>3.0.1</java-servlet.version>
+    <java.version>1.7</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+
+    <!-- Spring with AOP -->
+    <springframework.version>4.0.2.RELEASE</springframework.version>
+    <aspectj.version>1.7.4</aspectj.version>
+
+    <!-- Validator -->
+    <hibernate-validator.version>5.1.0.Final</hibernate-validator.version>
+
+    <!-- JSON -->
+    <jackson.version>2.2.2</jackson.version>
+
+    <!-- FreeMarker -->
+    <freemarker.version>2.3.20</freemarker.version>
+
+    <!-- Logging -->
+    <slf4j.version>1.7.5</slf4j.version>
+    <logback.version>1.0.13</logback.version>
+
+    <!-- Test -->
+    <junit.version>4.11</junit.version>
+    <hamcrest.version>1.3</hamcrest.version>
+    <mockito.version>1.9.5</mockito.version>
+
+    <!-- Tomcat for dev -->
+    <tomcat-dev-server.host>localhost</tomcat-dev-server.host>
+    <tomcat-dev-server.port>8080</tomcat-dev-server.port>
+
+    <!-- Plugins -->
+    <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>2.13</maven-surefire-plugin.version>
+    <maven-war-plugin.version>2.3</maven-war-plugin.version>
+    <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
+
+  </properties>
+
+  <profiles>
+    <profile>
+      <id>spring-v3.2.x</id>
+      <properties>
+        <springframework.version>3.2.8.RELEASE</springframework.version>
+        <hibernate-validator.version>4.3.1.Final</hibernate-validator.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>release</id>
+      <build>
+        <resources>
+          <resource>
+            <directory>${project.basedir}/src/main/resources</directory>
+          </resource>
+          <resource>
+            <directory>${project.basedir}/src/prod/resources</directory>
+          </resource>
+        </resources>
+      </build>
+    </profile>
+  </profiles>
+
+  <repositories>
+    <repository>
+      <id>spring-mvc-extras-repo</id>
+      <name>This library is an extension of the springmvc.</name>
+      <url>http://ogaclejapan.github.com/spring-mvc-extras</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+
+    <!-- Servlet -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${java-servlet.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Spring Libs -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${springframework.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+
+    <!-- Spring Extra Libs -->
+    <dependency>
+      <groupId>com.ogaclejapan</groupId>
+      <artifactId>spring-webmvc-extras</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+
+    <!-- AOP Libs -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>${aspectj.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>${aspectj.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- View Template -->
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>${freemarker.version}</version>
+    </dependency>
+
+    <!-- Logging Libs -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- Json -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
+    <!-- JSR303 Validator -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>${hibernate-validator.version}</version>
+    </dependency>
+
+    <!-- Test Libs -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${springframework.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-library</artifactId>
+      <version>${hamcrest.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <showWarnings>true</showWarnings>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+        <configuration>
+          <includes>
+            <include>**/*Tests.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${maven-war-plugin.version}</version>
+        <configuration>
+          <warName>${project.name}</warName>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>${tomcat7-maven-plugin.version}</version>
+        <configuration>
+          <server>${tomcat-dev-server.host}</server>
+          <port>${tomcat-dev-server.port}</port>
+          <path>/${project.name}</path>
+          <contextReloadable>true</contextReloadable>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+
+</project>
