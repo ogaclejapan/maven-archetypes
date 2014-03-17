@@ -6,39 +6,15 @@
       <groupId>com.ogaclejapan</groupId>
       <artifactId>java-archetype-simple</artifactId>
       <version>1.0</version>
-      <description>simple Java project.</description>
+      <description>Simple Java project.</description>
       <repository>http://ogaclejapan.github.com/maven-archetypes</repository>
     </archetype>
-        <!-- Standalone quickstart -->
-  	<archetype>
-  		<groupId>com.ogaclejapan</groupId>
-  		<artifactId>ogaclejapan-archetype-quickstart</artifactId>
-  		<version>1.0</version>
-  		<description>ogaclejapan quickstart Java project.</description>
-  		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
-  	</archetype>
-  	<archetype>
-  		<groupId>com.ogaclejapan</groupId>
-  		<artifactId>ogaclejapan-archetype-quickstart</artifactId>
-  		<version>1.1</version>
-  		<description>ogaclejapan quickstart Java project.</description>
-  		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
-  	</archetype>
-        <!-- Standalone quickstart on Spring -->
-  	<archetype>
-  		<groupId>com.ogaclejapan</groupId>
-  		<artifactId>ogaclejapan-archetype-quickstart-spring</artifactId>
-  		<version>1.0</version>
-  		<description>ogaclejapan quickstart on spring Java project.</description>
-  		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
-  	</archetype>
-        <!-- Spring MVC on Jetty -->
-  	<archetype>
-  		<groupId>com.ogaclejapan</groupId>
-  		<artifactId>ogaclejapan-archetype-spring-mvc</artifactId>
-  		<version>1.0</version>
-  		<description>ogaclejapan spring mvc on jetty Java project.</description>
-  		<repository>http://ogaclejapan.github.com/maven-archetypes</repository>
-  	</archetype>
+    <archetype>
+      <groupId>com.ogaclejapan</groupId>
+      <artifactId>java-archetype-web</artifactId>
+      <version>1.0.0</version>
+      <description>Web application project.</description>
+      <repository>http://ogaclejapan.github.com/maven-archetypes</repository>
+    </archetype>
   </archetypes>
 </archetype-catalog>
