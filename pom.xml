@@ -11,8 +11,6 @@
 
   <modules>
     <module>java-archetype-simple</module>
-    <module>ogaclejapan-archetype-quickstart</module>
-    <module>ogaclejapan-archetype-quickstart-spring</module>
-    <module>ogaclejapan-archetype-spring-mvc</module>
+    <module>java-archetype-web</module>
   </modules>
 </project>
