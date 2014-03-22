@@ -4,16 +4,16 @@
   <archetypes>
     <archetype>
       <groupId>com.ogaclejapan</groupId>
-      <artifactId>java-archetype-simple</artifactId>
+      <artifactId>java-archetype-quickstart</artifactId>
       <version>1.0</version>
-      <description>Simple Java project.</description>
+      <description>This archetype generates a stand alone application project in Java.</description>
       <repository>http://ogaclejapan.github.com/maven-archetypes</repository>
     </archetype>
     <archetype>
       <groupId>com.ogaclejapan</groupId>
       <artifactId>java-archetype-web</artifactId>
       <version>1.0.0</version>
-      <description>Web application project.</description>
+      <description>This archetype generates a web application project in Java.</description>
       <repository>http://ogaclejapan.github.com/maven-archetypes</repository>
     </archetype>
   </archetypes>
