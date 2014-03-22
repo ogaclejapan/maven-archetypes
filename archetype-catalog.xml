@@ -5,7 +5,7 @@
     <archetype>
       <groupId>com.ogaclejapan</groupId>
       <artifactId>java-archetype-quickstart</artifactId>
-      <version>1.0</version>
+      <version>1.0.0</version>
       <description>This archetype generates a stand alone application project in Java.</description>
       <repository>http://ogaclejapan.github.com/maven-archetypes</repository>
     </archetype>
