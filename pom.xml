@@ -10,7 +10,7 @@
   <name>Original Maven Archetypes</name>
 
   <modules>
-    <module>java-archetype-simple</module>
+    <module>java-archetype-quickstart</module>
     <module>java-archetype-web</module>
   </modules>
 </project>

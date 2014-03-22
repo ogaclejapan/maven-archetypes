@@ -6,6 +6,9 @@ package ${package};
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Application Bootstrap.
+ */
 public class Bootstrap {
     
     private static final Logger log = LoggerFactory.getLogger(Bootstrap.class);
@@ -14,12 +17,15 @@ public class Bootstrap {
      * @param args
      */
     public static void main(String[] args) {
-    	log.info("Hello {}.", "world");
-    	try {
-    		throw new Exception("foo");
-    	} catch (Exception e) {
-    		log.error("hoge", e);
-    	}
+        hello(() -> "world");
+    }
+
+    private static void hello(Echo echo) {
+        log.info("hello {}!", echo.repeat());
+    }
+
+    private static interface Echo {
+        String repeat();
     }
 
 }

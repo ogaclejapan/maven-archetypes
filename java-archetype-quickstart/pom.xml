@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.ogaclejapan</groupId>
-  <artifactId>java-archetype-simple</artifactId>
-  <version>1.0</version>
+  <artifactId>java-archetype-quickstart</artifactId>
+  <version>1.0.0</version>
   <packaging>maven-archetype</packaging>
 
-  <name>java-archetype-simple</name>
+  <name>java-archetype-quickstart</name>
 
   <build>
     <extensions>
