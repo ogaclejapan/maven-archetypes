@@ -31,12 +31,12 @@ Description: `ogaclejapan archetypes`
 GroupId: com.ogaclejapan
 ArtifactId: {{archetype}}  #e.g. java-archetype-web
 Version: {{version}}       #e.g. 1.0.0
-Repository: http://ogaclejapan.github.com/maven-archetypes/archetype-catalog.xml
+Repository: http://ogaclejapan.github.com/maven-archetypes
 ```
 
 ## Archetypes
 
-> java-archetype-quickstart
+> java-archetype-quickstart:1.0
 
 _This archetype generates a stand alone application project in Java._
 
@@ -44,7 +44,7 @@ Based on:
 * JDK8
 
 
-> java-archetype-web 
+> java-archetype-web:1.0
 
 _This archetype generates a web application project in Java._
 
